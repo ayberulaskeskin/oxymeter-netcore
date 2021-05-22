@@ -7,10 +7,12 @@ namespace oxymeter_netcore.Domain.Models.Response
 {
     public class MedicalRecordInfoModel
     {
+        public string Tckn { get; set; }
         public DateTime Date { get; set; }
-
         public string HearthRate { get; set; }
-        
         public string OxygenRate { get; set; }
+        public string HesCode { get; set; }
+        public string PatientStory { get; set; }
+
     }
 }

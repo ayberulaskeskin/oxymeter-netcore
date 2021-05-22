@@ -26,7 +26,7 @@ namespace oxymeter_netcore.DataAccess.Query
                     this.selectedQuery = "SELECT tckn, role FROM users WHERE tckn=@tckn AND password=@password AND role = 'admin'";//auk
                     break;//auk
                 case "GetMedicalRecord":
-                    this.selectedQuery = "SELECT m.measurementDate as Date, m.hr as HearthRate, m.spo2 as OxygenRate FROM users u, medicalrecords m WHERE u.tckn = m.tckn and u.tckn = @Tckn";
+                    this.selectedQuery = "SELECT u.tckn as Tckn, m.measurementDate as Date, m.hr as HearthRate, m.spo2 as OxygenRate, m.hesCode as HesCode, m.patientStory as PatientStory FROM users u, medicalrecords m WHERE u.tckn = m.tckn and u.tckn = @Tckn";
                     break;
                 case "AddMedicalRecord":
                     this.selectedQuery = "INSERT INTO medicalrecords (measurementDate, spo2, hr, tckn, hesCode, patientStory) VALUES (@MeasurementDate, @Spo2, @Hr, @Tckn,@HesCode,@PatientStory);";

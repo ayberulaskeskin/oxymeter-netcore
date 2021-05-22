@@ -38,6 +38,7 @@ namespace oxymeter_netcore
                 options.AddPolicy(allowSpecificOrigins,
                builder =>
                {
+                   //Before deployment this origin must be changed into client's IP
                    builder.WithOrigins("http://localhost:8080")
                            .AllowAnyHeader()
                            .AllowAnyMethod();
